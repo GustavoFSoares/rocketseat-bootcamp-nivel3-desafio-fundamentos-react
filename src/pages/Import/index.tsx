@@ -29,11 +29,11 @@ const Import: React.FC = () => {
 
     const file = uploadedFiles[0];
 
-    data.append('file', file.file, file.name);
+    data.append('import', file.file, file.name);
 
     try {
       await api.patch('/transactions/import', data);
-      // history.push('/');
+      history.push('/');
     } catch (err) {
       console.log(err);
     }
